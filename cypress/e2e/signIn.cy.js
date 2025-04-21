@@ -6,9 +6,9 @@ describe('Sign In page', () => {
   });
 
   it('should log in successfully with correct credentials', () => {
-    cy.get('input=[name="username"]').type('tomsmith');
-    cy.get('input=[name="password"]').type('SuperSecretPassword');
-    cy.get('button=["submit"]').click();
+    cy.get('input[name="username"]').type('tomsmith');
+    cy.get('input[name="password"]').type('SuperSecretPassword');
+    cy.get('button["submit"]').click();
 
     cy.get('#flash')
       .should('have.class', 'success')
@@ -16,9 +16,9 @@ describe('Sign In page', () => {
   });
 
   it('should fail to log in with incorrect credentials', () => {
-    cy.get('input=[name="username"]').type('tomsmith');
-    cy.get('input=[name="password"]').type('SuperSecretPassword');
-    cy.get('button=["submit"]').click();
+    cy.get('input[name="username"]').type('tomsmith');
+    cy.get('input[name="password"]').type('SuperSecretPassword');
+    cy.get('button["submit"]').click();
 
     cy.get('#flash')
       .should('be.visible')
@@ -31,9 +31,9 @@ describe('Sign In page', () => {
   });
 
   it('should log out successfully after logging in', () => {
-    cy.get('input=[name="username"]').type('tomsmith');
-    cy.get('input=[name="password"]').type('SuperSecretPassword');
-    cy.get('button=["submit"]').click();
+    cy.get('input[name="username"]').type('tomsmith');
+    cy.get('input[name="password"]').type('SuperSecretPassword');
+    cy.get('button["submit"]').click();
 
     cy.get('a[href="/logout"]').click();
 
